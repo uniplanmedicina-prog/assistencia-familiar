@@ -1,0 +1,799 @@
+/* Variáveis de cores baseadas na Logo */
+:root {
+    --primary: #2c9bc0;
+    /* Azul Claro */
+    --secondary: #8e2478;
+    /* Roxo */
+    --accent: #1d4065;
+    /* Azul Escuro */
+    --white: #ffffff;
+    --gray: #f4f4f4;
+    --text: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Utilitários */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.bg-light {
+    background-color: var(--gray);
+}
+
+.bg-blue {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* Botões */
+.btn-primary {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-white {
+    background: var(--white);
+    color: var(--primary);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-white:hover {
+    transform: scale(1.05);
+}
+
+/* Header */
+header {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 5;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo img {
+    height: 80px;
+    /* ✅ MODIFICADO: Aumenta a altura do logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    /* Imagem atualizada para 'img3.png' e fundo azul claro */
+    background: url('img3.png') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding-top: 80px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Azul claro da marca com transparência (85% de opacidade) */
+    background: rgba(44, 155, 192, 0.85);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 100;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-btns {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Sections Geral */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--accent);
+    font-size: 2.5rem;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Especialidades Grid */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    border-bottom: 4px solid var(--primary);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card i {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+/* Galeria */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+    background: var(--accent);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Animações (Scroll Reveal) */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: var(--white);
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+/* --- Widget de Chat Flutuante --- */
+.chat-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Botão Redondo (Bolinha) */
+.chat-toggle-btn {
+    /* Mudando o botão flutuante para o verde oficial do WhatsApp */
+    background: #25D366;
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-toggle-btn:hover {
+    transform: scale(1.1);
+    background: #128C7E;
+    /* Verde mais escuro no hover */
+}
+
+/* Janela do Chat */
+.chat-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 320px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+
+    /* Animação de abrir/fechar */
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: bottom right;
+}
+
+.chat-window.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    visibility: visible;
+}
+
+/* Cabeçalho do Chat */
+.chat-header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.chat-header button {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Corpo do Chat */
+.chat-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.chat-body input,
+.chat-body textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.9rem;
+    transition: border 0.3s;
+}
+
+.chat-body input:focus,
+.chat-body textarea:focus {
+    border-color: var(--primary);
+}
+
+/* Botão de Envio dentro do Chat */
+.btn-chat-send {
+    background: #25D366;
+    /* Verde WhatsApp */
+    color: var(--white);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-chat-send:hover {
+    background: #128C7E;
+}
+
+/* --- Estilos do Carrossel (Split Design Centralizado) --- */
+.carousel-container {
+    position: relative;
+    max-width: 1000px;
+    /* Limita a largura do carrossel */
+    height: 480px;
+    margin: 0 auto;
+    /* Centraliza o carrossel na página */
+    width: 100%;
+    padding: 0;
+}
+
+.carousel-track-container {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    background: var(--white);
+}
+
+/* Lado Esquerdo: Texto e Descrição */
+.slide-text {
+    flex: 1;
+    background: var(--white);
+    /* ✅ CORREÇÃO: PADRÃO PADDING 40px (Botões não estão mais na lateral) */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+}
+
+.doctor-name {
+    color: var(--accent);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.doctor-description {
+    color: var(--text);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Lado Direito: Imagem do Médico */
+.slide-visual {
+    flex: 1;
+    position: relative;
+    background: var(--gray);
+}
+
+.slide-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* --- NOVO BLOCO: Controles no Rodapé --- */
+.carousel-controls {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 20;
+}
+
+/* Botões do Carrossel (NOVO ESTILO: Pílula Centralizada) */
+.carousel-btn {
+    position: relative;
+    width: 150px;
+    height: 45px;
+    border-radius: 25px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(142, 36, 120, 0.9);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 20;
+}
+
+.carousel-btn:hover {
+    background: var(--secondary);
+    opacity: 1;
+}
+
+/* Espaçamento para o ícone/seta dentro do botão */
+.carousel-btn i {
+    margin: 0 5px;
+}
+
+/* Remove as regras de posicionamento lateral que não são mais usadas */
+.prev-btn,
+.next-btn {
+    left: auto;
+    right: auto;
+}
+
+/* --- RESPONSIVIDADE (Mobile) --- */
+/* --- RESPONSIVIDADE (Mobile: max-width 768px) --- */
+/* --- RESPONSIVIDADE (Mobile: max-width 768px) --- */
+/* --- RESPONSIVIDADE (Mobile: max-width 768px) --- */
+/* --- RESPONSIVIDADE (Mobile: max-width 768px) --- */
+/* --- RESPONSIVIDADE (Mobile: max-width 768px) --- */
+/* --- RESPONSIVIDADE (Mobile: max-width 768px) --- */
+@media (max-width: 768px) {
+
+    /* --- Navegação e Header (Mantidas) --- */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: var(--white);
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    /* --- Seções Gerais (Mantidas) --- */
+    .split {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    /* --- Carrossel Responsivo (Com Correção da Foto) --- */
+    .carousel-track-container {
+        overflow: visible;
+        padding: 0 20px;
+    }
+
+    .carousel-track {
+        transform: none !important;
+        display: block;
+        height: auto;
+    }
+
+    .carousel-slide {
+        width: 100%;
+        flex-shrink: 0;
+        scroll-snap-align: none;
+        flex-direction: column-reverse;
+        position: static;
+
+        background: var(--white);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin-bottom: 40px;
+    }
+
+    .carousel-container {
+        height: auto;
+        padding: 0;
+    }
+
+    .carousel-controls {
+        display: none;
+    }
+
+    .slide-text {
+        padding: 30px 20px;
+        max-width: 100%;
+        flex: none;
+    }
+
+    /* Contêiner Visual */
+    .slide-visual {
+        height: 300px;
+        flex: none;
+        width: 100%;
+        /* Não precisamos mais de display: flex aqui, pois a imagem preenche */
+        border-radius: 10px 10px 0 0;
+    }
+
+    /* Imagem dentro do Contêiner */
+    /* Dentro do bloco @media (max-width: 768px) */
+
+    .slide-visual img {
+        width: 100%;
+        height: 100%;
+
+        /* Esta regra já garante que a imagem Mobile preencha e centralize */
+        object-fit: cover;
+        object-position: center;
+
+        border-radius: inherit;
+    }
+
+    .doctor-name {
+        font-size: 2rem;
+    }
+
+    .prev-btn,
+    .next-btn {
+        display: none;
+    }
+}
+
+/* --- Novo Estilo: Modal de Credenciamento Dedicado (Nomes Exclusivos) --- */
+/* --- Novo Estilo: Modal de Credenciamento Dedicado (Nomes Exclusivos) --- */
+
+/* Os estilos internos podem usar classes gerais ou IDs, mas manter a consistência é chave */
+/* (Estilos para .modal-header-custom e .modal-body input permanecem os mesmos) */
+/* --- Novo Estilo: Modal de Credenciamento Dedicado (Nomes Exclusivos) --- */
+/* --- 1. Estilos do Overlay e Container (Mantendo a funcionalidade) --- */
+
+.uniplan-modal-overlay {
+    display: none; 
+    position: fixed;
+    z-index: 3000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; 
+    overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.75); /* Fundo mais escuro para destaque */
+    padding: 20px 0; 
+}
+
+.uniplan-modal-content {
+    background-color: var(--white);
+    margin: 50px auto; 
+    padding: 30px;
+    border-radius: 12px; /* Mais arredondado */
+    width: 95%; 
+    max-width: 450px; /* Levemente mais estreito */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* Sombra mais profunda */
+    position: relative;
+    animation-name: animatetop-uniplan;
+    animation-duration: 0.4s;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- 2. Cabeçalho e Tipografia (Melhorando a hierarquia) --- */
+
+.modal-header-custom {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.modal-header-custom h2 {
+    color: var(--primary); /* Cor principal no título */
+    font-size: 2rem; /* Título maior */
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.modal-header-custom p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* --- 3. Campos do Formulário (Visual clean) --- */
+
+.modal-body input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Cantos levemente arredondados */
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    box-sizing: border-box; /* Garante que padding não aumente a largura */
+}
+
+.modal-body input:focus {
+    border-color: var(--primary); /* Destaque na cor primária ao focar */
+    outline: none;
+    box-shadow: 0 0 5px rgba(var(--primary-rgb, 44, 155, 192), 0.3); /* Sombra suave */
+}
+
+/* --- 4. Botão de Envio (Mais Atrativo) --- */
+/* Assumindo que .btn-primary já existe, vamos focar no hover */
+
+/* Estilização para o botão dentro do formulário */
+.modal-body .btn-primary {
+    /* Ajuste para o seu design, se necessário, assumindo um fundo forte */
+    background-color: var(--primary); 
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.modal-body .btn-primary:hover {
+    background-color: var(--accent); /* Uma cor ligeiramente diferente no hover */
+    opacity: 0.9;
+    transform: translateY(-1px); /* Leve levantamento */
+}
+
+/* --- 5. Rodapé e Fechamento --- */
+
+.modal-footer-text {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+.modal-footer-text a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.uniplan-close-btn {
+    color: #999;
+    float: right;
+    font-size: 32px; /* Ícone de fechar maior */
+    font-weight: 300; /* Mais fino */
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.uniplan-close-btn:hover,
+.uniplan-close-btn:focus {
+    color: #333; /* Fica mais escuro no hover */
+    text-decoration: none;
+}
+
+/* Animação */
+@keyframes animatetop-uniplan {
+    from {top: -500px; opacity: 0} 
+    to {top: 50px; opacity: 1} /* Ajustado para começar de cima */
+}

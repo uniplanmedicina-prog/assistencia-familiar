@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniplan Med | Clínica Médica</title>
+    <link rel="icon" type="image/png" href="./LogoArt.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <img src="0.png" alt="Logo Uniplan Med">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#especialidades">Especialidades</a></li>
+                    <li><a href="#localizacao">Localização</a></li>
+                    <li><a href="./Convieniado.html">Seja um Conveniado!</a>
+                    <li><a href="./index1.html">Nossos Planos</a>
+                </ul>
+            </nav>
+            <a href="https://wa.me/5512988827745" target="_blank" class="btn-primary">
+                <i class="fab fa-whatsapp"></i> Agendar
+            </a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content hidden">
+            <h1>Cuidando da sua saúde com excelência</h1>
+            <p>Uniplan Med: Nosso plano é cuidar de você.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/5512988827745" target="_blank" class="btn-primary">Agendar Consulta</a>
+                <a href="#especialidades" class="btn-secondary">Ver Especialidades</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="section">
+        <div class="container split">
+            <div class="text hidden">
+                <h2>Sobre a Clínica</h2>
+                <p>Localizada no centro de Caçapava, a Uniplan Med oferece uma estrutura moderna e acolhedora para atender você e sua família.</p>
+                <p>Contamos com uma equipe multidisciplinar pronta para oferecer o melhor diagnóstico e tratamento.</p>
+            </div>
+            <div class="image hidden">
+                <img src="img3.png" alt="Recepção Uniplan Med">
+            </div>
+        </div>
+    </section>
+
+    <section id="especialidades" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title hidden">Nossas Especialidades</h2>
+            <div class="grid-cards">
+                <div class="card hidden"><i class="fas fa-baby"></i><h3>Pediatria</h3></div>
+                <div class="card hidden"><i class="fas fa-brain"></i><h3>Psiquiatria</h3></div>
+                <div class="card hidden"><i class="fas fa-stethoscope"></i><h3>Gastroenterologia</h3></div>
+                <div class="card hidden"><i class="fas fa-spa"></i><h3>Terapia Holística</h3></div>
+                <div class="card hidden"><i class="fas fa-allergies"></i><h3>Dermatologia</h3></div>
+                <div class="card hidden"><i class="fas fa-tooth"></i><h3>Odontologia</h3></div>
+                <div class="card hidden"><i class="fas fa-user-md"></i><h3>Clínico Geral</h3></div>
+                <div class="card hidden"><i class="fas fa-apple-alt"></i><h3>Nutricionista</h3></div>
+                <div class="card hidden"><i class="fas fa-comments"></i><h3>Psicologia</h3></div>
+                <div class="card hidden"><i class="fas fa-users"></i><h3>Constelação Familiar</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="section">
+        <div class="container">
+            <h2 class="section-title hidden">Nossa Estrutura</h2>
+            <div class="gallery-grid">
+                <img src="img1.png" class="hidden" alt="Consultório">
+                <img src="img2.png" class="hidden" alt="Sala de Exames">
+                <img src="img3.png" class="hidden" alt="Recepção">
+            </div>
+        </div>
+    </section>
+
+    <section id="localizacao" class="section bg-blue">
+        <div class="container split">
+            <div class="contact-info hidden">
+                <h2>Onde Estamos</h2>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Cel. Manoel Inocêncio, 563 - Centro, Caçapava - SP</p>
+                <p><i class="fas fa-envelope"></i> uniplanmedicina@gmail.com</p>
+                <p><i class="fab fa-whatsapp"></i> (12) 98882-7745</p>
+                <a href="https://wa.me/5512988827745" target="_blank" class="btn-white">Falar no WhatsApp</a>
+            </div>
+            <div class="map hidden">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.659987654321!2d-45.710000!3d-23.100000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA2JzAwLjAiUyA0NcKwNDInMzYuMCJX!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Uniplan Med. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="chat-widget">
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <h3>Fale Conosco (WhatsApp)</h3>
+            <button id="closeChat"><i class="fas fa-times"></i></button>
+        </div>
+        <form id="whatsappForm" class="chat-body">
+            <input type="text" id="chatName" placeholder="Seu Nome" required>
+            <textarea id="chatMessage" rows="5" placeholder="Qual sua especialidade de interesse ou dúvida?" required></textarea>
+            <button type="submit" class="btn-chat-send">Enviar WhatsApp <i class="fab fa-whatsapp"></i></button>
+        </form>
+    </div>
+
+    <button class="chat-toggle-btn" id="chatToggle">
+        <i class="fab fa-whatsapp"></i>
+    </button>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
