@@ -82,14 +82,17 @@ body {
     transform: scale(1.05);
 }
 
-/* Header */
+/* ------------------------------------------------------------------- */
+/* ✅ AJUSTE CRÍTICO: HEADER (Z-INDEX e POSITION) */
+/* ------------------------------------------------------------------- */
 header {
     background: var(--white);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 5;
+    /* Aumentado o Z-Index para garantir que ele fique acima de tudo, inclusive o Modal (3000) */
+    z-index: 4000; 
     height: 80px;
     display: flex;
     align-items: center;
@@ -104,7 +107,6 @@ header .container {
 
 .logo img {
     height: 80px;
-    /* ✅ MODIFICADO: Aumenta a altura do logo */
 }
 
 .nav-links {
@@ -133,7 +135,6 @@ header .container {
 /* Hero Section */
 .hero {
     height: 100vh;
-    /* Imagem atualizada para 'img3.png' e fundo azul claro */
     background: url('img3.png') no-repeat center center/cover;
     position: relative;
     display: flex;
@@ -141,7 +142,8 @@ header .container {
     justify-content: center;
     text-align: center;
     color: var(--white);
-    padding-top: 80px;
+    /* Correção de Padding: Adiciona padding do tamanho do Header para o conteúdo não ficar escondido */
+    padding-top: 80px; 
 }
 
 .hero-overlay {
@@ -150,12 +152,14 @@ header .container {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Azul claro da marca com transparência (85% de opacidade) */
+    /* Garantindo que a overlay fique ABAIXO do hero-content */
+    z-index: 5;
     background: rgba(44, 155, 192, 0.85);
 }
 
 .hero-content {
     position: relative;
+    /* Z-Index alto para aparecer acima da overlay (z-index: 5) */
     z-index: 100;
     max-width: 800px;
     padding: 20px;
@@ -264,11 +268,17 @@ footer {
     transform: translateY(0);
 }
 
-/* Responsivo */
+/* ------------------------------------------------------------------- */
+/* RESPONSIVO */
+/* ------------------------------------------------------------------- */
 @media (max-width: 768px) {
+    
+    /* NAV MOBILE */
     .nav-links {
         display: none;
         position: absolute;
+        /* Z-index da nav-links deve ser menor que o header para não flutuar acima */
+        z-index: 3999; 
         top: 80px;
         right: 0;
         background: var(--white);
@@ -286,6 +296,10 @@ footer {
     .menu-toggle {
         display: block;
     }
+    
+    .logo img {
+        height: 45px;
+    }
 
     .split {
         grid-template-columns: 1fr;
@@ -294,9 +308,76 @@ footer {
     .hero h1 {
         font-size: 2rem;
     }
+
+    /* --- Carrossel Responsivo --- */
+    .carousel-track-container {
+        overflow: visible;
+        padding: 0 20px;
+    }
+
+    .carousel-track {
+        transform: none !important;
+        display: block;
+        height: auto;
+    }
+    
+    /* ✅ CORREÇÃO: Removendo position: static para a transição funcionar no JS */
+    .carousel-slide {
+        width: 100%;
+        flex-shrink: 0;
+        scroll-snap-align: none;
+        flex-direction: column-reverse;
+        /* position: static removido para manter a compatibilidade com JS */
+        
+        background: var(--white);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin-bottom: 40px;
+    }
+
+    .carousel-container {
+        height: auto;
+        padding: 0;
+    }
+
+    .carousel-controls {
+        display: none;
+    }
+
+    .slide-text {
+        padding: 30px 20px;
+        max-width: 100%;
+        flex: none;
+    }
+
+    .slide-visual {
+        height: 300px;
+        flex: none;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .slide-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: inherit;
+    }
+
+    .doctor-name {
+        font-size: 2rem;
+    }
+
+    .prev-btn,
+    .next-btn {
+        display: none;
+    }
 }
 
-/* --- Widget de Chat Flutuante --- */
+/* ------------------------------------------------------------------- */
+/* --- Widget de Chat Flutuante (Mantido) --- */
+/* ------------------------------------------------------------------- */
 .chat-widget {
     position: fixed;
     bottom: 30px;
@@ -307,7 +388,6 @@ footer {
 
 /* Botão Redondo (Bolinha) */
 .chat-toggle-btn {
-    /* Mudando o botão flutuante para o verde oficial do WhatsApp */
     background: #25D366;
     color: var(--white);
     width: 60px;
@@ -326,7 +406,6 @@ footer {
 .chat-toggle-btn:hover {
     transform: scale(1.1);
     background: #128C7E;
-    /* Verde mais escuro no hover */
 }
 
 /* Janela do Chat */
@@ -340,7 +419,6 @@ footer {
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 
-    /* Animação de abrir/fechar */
     opacity: 0;
     transform: translateY(20px) scale(0.9);
     visibility: hidden;
@@ -404,7 +482,6 @@ footer {
 /* Botão de Envio dentro do Chat */
 .btn-chat-send {
     background: #25D366;
-    /* Verde WhatsApp */
     color: var(--white);
     border: none;
     padding: 12px;
@@ -422,14 +499,14 @@ footer {
     background: #128C7E;
 }
 
-/* --- Estilos do Carrossel (Split Design Centralizado) --- */
+/* ------------------------------------------------------------------- */
+/* --- Estilos do Carrossel (Mantidos) --- */
+/* ------------------------------------------------------------------- */
 .carousel-container {
     position: relative;
     max-width: 1000px;
-    /* Limita a largura do carrossel */
     height: 480px;
     margin: 0 auto;
-    /* Centraliza o carrossel na página */
     width: 100%;
     padding: 0;
 }
@@ -464,7 +541,6 @@ footer {
 .slide-text {
     flex: 1;
     background: var(--white);
-    /* ✅ CORREÇÃO: PADRÃO PADDING 40px (Botões não estão mais na lateral) */
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -499,7 +575,7 @@ footer {
     object-position: center;
 }
 
-/* --- NOVO BLOCO: Controles no Rodapé --- */
+/* --- Controles no Rodapé --- */
 .carousel-controls {
     position: absolute;
     bottom: -70px;
@@ -545,153 +621,33 @@ footer {
     right: auto;
 }
 
-/* --- RESPONSIVIDADE (Mobile) --- */
-/* --- RESPONSIVIDADE (Mobile: max-width 768px) --- */
-/* --- RESPONSIVIDADE (Mobile: max-width 768px) --- */
-/* --- RESPONSIVIDADE (Mobile: max-width 768px) --- */
-/* --- RESPONSIVIDADE (Mobile: max-width 768px) --- */
-/* --- RESPONSIVIDADE (Mobile: max-width 768px) --- */
-/* --- RESPONSIVIDADE (Mobile: max-width 768px) --- */
-@media (max-width: 768px) {
 
-    /* --- Navegação e Header (Mantidas) --- */
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 80px;
-        right: 0;
-        background: var(--white);
-        width: 100%;
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .logo img {
-        height: 45px;
-    }
-
-    /* --- Seções Gerais (Mantidas) --- */
-    .split {
-        grid-template-columns: 1fr;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    /* --- Carrossel Responsivo (Com Correção da Foto) --- */
-    .carousel-track-container {
-        overflow: visible;
-        padding: 0 20px;
-    }
-
-    .carousel-track {
-        transform: none !important;
-        display: block;
-        height: auto;
-    }
-
-    .carousel-slide {
-        width: 100%;
-        flex-shrink: 0;
-        scroll-snap-align: none;
-        flex-direction: column-reverse;
-        position: static;
-
-        background: var(--white);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        margin-bottom: 40px;
-    }
-
-    .carousel-container {
-        height: auto;
-        padding: 0;
-    }
-
-    .carousel-controls {
-        display: none;
-    }
-
-    .slide-text {
-        padding: 30px 20px;
-        max-width: 100%;
-        flex: none;
-    }
-
-    /* Contêiner Visual */
-    .slide-visual {
-        height: 300px;
-        flex: none;
-        width: 100%;
-        /* Não precisamos mais de display: flex aqui, pois a imagem preenche */
-        border-radius: 10px 10px 0 0;
-    }
-
-    /* Imagem dentro do Contêiner */
-    /* Dentro do bloco @media (max-width: 768px) */
-
-    .slide-visual img {
-        width: 100%;
-        height: 100%;
-
-        /* Esta regra já garante que a imagem Mobile preencha e centralize */
-        object-fit: cover;
-        object-position: center;
-
-        border-radius: inherit;
-    }
-
-    .doctor-name {
-        font-size: 2rem;
-    }
-
-    .prev-btn,
-    .next-btn {
-        display: none;
-    }
-}
-
-/* --- Novo Estilo: Modal de Credenciamento Dedicado (Nomes Exclusivos) --- */
-/* --- Novo Estilo: Modal de Credenciamento Dedicado (Nomes Exclusivos) --- */
-
-/* Os estilos internos podem usar classes gerais ou IDs, mas manter a consistência é chave */
-/* (Estilos para .modal-header-custom e .modal-body input permanecem os mesmos) */
-/* --- Novo Estilo: Modal de Credenciamento Dedicado (Nomes Exclusivos) --- */
-/* --- 1. Estilos do Overlay e Container (Mantendo a funcionalidade) --- */
+/* ------------------------------------------------------------------- */
+/* --- Novo Estilo: Modal de Credenciamento Dedicado (AJUSTADO) --- */
+/* ------------------------------------------------------------------- */
 
 .uniplan-modal-overlay {
-    display: none; 
+    display: none;    
     position: fixed;
-    z-index: 3000; 
+    z-index: 3000;    
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow-y: auto; 
+    overflow-y: auto;    
     overflow-x: hidden;
-    background-color: rgba(0, 0, 0, 0.75); /* Fundo mais escuro para destaque */
-    padding: 20px 0; 
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 20px 0;    
 }
 
 .uniplan-modal-content {
     background-color: var(--white);
-    margin: 50px auto; 
+    margin: 50px auto;    
     padding: 30px;
-    border-radius: 12px; /* Mais arredondado */
-    width: 95%; 
-    max-width: 450px; /* Levemente mais estreito */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* Sombra mais profunda */
+    border-radius: 12px;
+    width: 95%;    
+    max-width: 450px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
     position: relative;
     animation-name: animatetop-uniplan;
     animation-duration: 0.4s;
@@ -708,8 +664,8 @@ footer {
 }
 
 .modal-header-custom h2 {
-    color: var(--primary); /* Cor principal no título */
-    font-size: 2rem; /* Título maior */
+    color: var(--primary);
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 5px;
 }
@@ -726,25 +682,22 @@ footer {
     padding: 12px 15px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
-    border-radius: 8px; /* Cantos levemente arredondados */
+    border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.3s;
-    box-sizing: border-box; /* Garante que padding não aumente a largura */
+    box-sizing: border-box;
 }
 
 .modal-body input:focus {
-    border-color: var(--primary); /* Destaque na cor primária ao focar */
+    border-color: var(--primary);
     outline: none;
-    box-shadow: 0 0 5px rgba(var(--primary-rgb, 44, 155, 192), 0.3); /* Sombra suave */
+    /* Remover a propriedade rgba(var(--primary-rgb...) que estava incompleta */
+    box-shadow: 0 0 5px rgba(44, 155, 192, 0.3); 
 }
 
 /* --- 4. Botão de Envio (Mais Atrativo) --- */
-/* Assumindo que .btn-primary já existe, vamos focar no hover */
-
-/* Estilização para o botão dentro do formulário */
 .modal-body .btn-primary {
-    /* Ajuste para o seu design, se necessário, assumindo um fundo forte */
-    background-color: var(--primary); 
+    background-color: var(--secondary); /* Usando secondary para o botão do modal como no design */
     border: none;
     padding: 15px 20px;
     font-size: 1.1rem;
@@ -753,12 +706,16 @@ footer {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.1s;
+    /* Garantindo que o botão dentro do modal seja um bloco flexbox */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-body .btn-primary:hover {
-    background-color: var(--accent); /* Uma cor ligeiramente diferente no hover */
+    background-color: var(--accent);
     opacity: 0.9;
-    transform: translateY(-1px); /* Leve levantamento */
+    transform: translateY(-1px);
 }
 
 /* --- 5. Rodapé e Fechamento --- */
@@ -778,9 +735,12 @@ footer {
 
 .uniplan-close-btn {
     color: #999;
-    float: right;
-    font-size: 32px; /* Ícone de fechar maior */
-    font-weight: 300; /* Mais fino */
+    /* float: right; Removido para posicionar com absolute/flexbox se precisar */
+    position: absolute; 
+    top: 15px; 
+    right: 20px;
+    font-size: 32px;
+    font-weight: 300;
     cursor: pointer;
     line-height: 1;
     transition: color 0.3s;
@@ -788,12 +748,12 @@ footer {
 
 .uniplan-close-btn:hover,
 .uniplan-close-btn:focus {
-    color: #333; /* Fica mais escuro no hover */
+    color: #333;
     text-decoration: none;
 }
 
 /* Animação */
 @keyframes animatetop-uniplan {
-    from {top: -500px; opacity: 0} 
-    to {top: 50px; opacity: 1} /* Ajustado para começar de cima */
+    from {top: -500px; opacity: 0}    
+    to {top: 50px; opacity: 1}
 }
