@@ -200,20 +200,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-const listaMedicosAryel = [
-    { id: 1, nome: "Lineker", cargo: "Clínico Geral", img: "Lineker-mobile.png", desc: "Atua no diagnóstico, prevenção e tratamento de diversas doenças, servindo como o primeiro contato do paciente.", atuacao: "Saúde integral e check-ups." },
-    { id: 2, nome: "Gabriela", cargo: "Clínica Geral", img: "Gabriela-mobile.png", desc: "Focada em diagnósticos precisos e cuidados primários abrangentes com abordagem humanizada.", atuacao: "Saúde da família." },
-    { id: 3, nome: "Rita", cargo: "Nutricionista", img: "Rita-mobile.png", desc: "Planos alimentares personalizados para promover saúde sem dietas restritivas.", atuacao: "Reeducação alimentar." },
-    { id: 4, nome: "Karen", cargo: "Nutricionista Esportiva", img: "Karen-mobile.png", desc: "Otimização de desempenho físico e composição corporal.", atuacao: "Performance e hipertrofia." },
-    { id: 5, nome: "Maury", cargo: "Terapia Integrativa", img: "Maury-mobile.png", desc: "Equilíbrio emocional e mental através de métodos holísticos.", atuacao: "Saúde emocional." },
-    { id: 6, nome: "Irineu", cargo: "Terapia Avançada", img: "Irineu-mobile.png", desc: "Harmonização energética e resolução de traumas profundos.", atuacao: "Bloqueios sistêmicos." },
-    { id: 7, nome: "Sanders", cargo: "Psicólogo", img: "Sanders-mobile.png", desc: "Suporte terapêutico cognitivo-comportamental.", atuacao: "Autoconhecimento." },
-    { id: 8, nome: "Victoria", cargo: "Psicóloga", img: "Victoria-mobile.png", desc: "Gestão de ansiedade, estresse e melhoria da autoestima.", atuacao: "Terapia de casais." },
-    { id: 9, nome: "Carla", cargo: "Gastroenterologia", img: "Carla-mobile.png", desc: "Tratamento do aparelho digestivo e endoscopia.", atuacao: "Saúde digestiva." },
-    { id: 10, nome: "Viviane", cargo: "Constelação Familiar", img: "Viviane-mobile.png", desc: "Resolução de conflitos através do sistema familiar.", atuacao: "Dinâmicas ocultas." },
-    { id: 11, nome: "Rafael", cargo: "Clínico Geral", img: "Rafael-mobile.png", desc: "Saúde primária e gerenciamento de condições crônicas.", atuacao: "Prevenção geral." }
-];
-
 function renderizarListaMobile() {
     const wrapper = document.getElementById('aryel-doctors-list');
     wrapper.innerHTML = listaMedicosAryel.map(medico => `
@@ -250,4 +236,5 @@ function fecharModalMedico() {
 }
 
 // Inicia a lista ao carregar
+
 renderizarListaMobile();
