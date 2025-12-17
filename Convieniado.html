@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja um Conveniado | Uniplan Med</title>
+    <link rel="icon" type="image/png" href="./LogoArt.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="0.png" alt="Logo Uniplan Med"></a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="./index.html">Voltar ao Início</a></li>
+                    <li><a href="#como-funciona">Como Funciona</a></li>
+                    <li><a href="#equipe">Nossa Equipe</a></li>
+                    <li><a href="./index1.html">Nossos Planos</a>
+
+                </ul>
+            </nav>
+            <a href="https://wa.me/5512988827745" target="_blank" class="btn-primary">
+                <i class="fab fa-whatsapp"></i> Contato
+            </a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" style="background-image: url('img1.png');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content hidden">
+            <h1>Faça parte da equipe Uniplan Med</h1>
+            <p>Amplie seus atendimentos em uma estrutura moderna e completa.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/5512988827745?text=Ol%C3%A1%2C%20sou%20m%C3%A9dico%20e%20gostaria%20de%20me%20conveniar%21"
+                    target="_blank" class="btn-primary">Quero me Conveniar</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="como-funciona" class="section">
+        <div class="container">
+            <h2 class="section-title hidden">Como se Conveniar</h2>
+            <div class="grid-cards">
+                <div class="card hidden">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>1. Entre em Contato</h3>
+                    <p>Mande uma mensagem em nosso WhatsApp oficial.</p>
+                </div>
+                <div class="card hidden">
+                    <i class="fas fa-user-md"></i>
+                    <h3>2. Apresente-se</h3>
+                    <p>Informe sua área de atuação médica e especialidade.</p>
+                </div>
+                <div class="card hidden">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>3. Defina os Detalhes</h3>
+                    <p>Informe seu preço e horários disponíveis na agenda.</p>
+                </div>
+            </div>
+
+
+            <div class="hero-btns">
+                <a href="#" class="btn-primary" id="btnAbrirCredenciamento">
+                    Iniciar Cadastro Agora <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="uniplan-modal-overlay" id="modalCredenciamento">
+                <div class="uniplan-modal-content">
+                    <span class="uniplan-close-btn" id="fecharCredenciamento">&times;</span>
+                    <div class="modal-header-custom">
+                        <h2>Solicitação de Credenciamento</h2>
+                        <p>Preencha os dados e nossa equipe de parcerias entrará em contato.</p>
+                    </div>
+                    <form id="formCredenciamento">
+                        <div class="modal-body">
+                            <input type="text" id="inputNomeCred" placeholder="Seu Nome Completo" required>
+                            <input type="text" id="inputEspecCred" placeholder="Sua Especialidade" required>
+                            <input type="email" id="inputEmailCred" placeholder="Email para Contato" required>
+                            <input type="tel" id="inputTelCred" placeholder="Telefone com DDD" required>
+
+                            <button type="submit" class="btn-primary" style="width: 100%; margin-top: 20px;">
+                                Enviar Pedido de Parceria <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <p class="modal-footer-text">
+                        Ou fale diretamente conosco via WhatsApp:
+                        <a href="https://wa.me/5512988827745" target="_blank">Clique aqui.</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="equipe" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title hidden">Conheça Nossos Profissionais</h2>
+        </div>
+
+        <div class="carousel-container hidden desktop-only">
+            <div class="carousel-track-container">
+                <ul class="carousel-track">
+                    <li class="carousel-slide current-slide">
+                        <div class="slide-text">
+                            <h3 class="doctor-name">Lineker</h3>
+                            <p class="doctor-description"><strong>Clínico Geral</strong> Atua no diagnóstico, prevenção
+                                e tratamento de diversas doenças, servindo como o primeiro contato do paciente com a
+                                saúde e direcionando para especialistas quando necessário.</p>
+                            <p class="doctor-description"><strong>Área de Atuação:</strong> Saúde integral, check-ups e
+                                acompanhamento de rotina.</p>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="Lineker.png" alt="Lineker">
+                        </div>
+                    </li>
+
+                    <li class="carousel-slide">
+                        <div class="slide-text">
+                            <h3 class="doctor-name">Gabriela</h3>
+                            <p class="doctor-description"><strong>Clínica Geral</strong> Focada em diagnósticos precisos
+                                e cuidados primários abrangentes, Gabriela promove o bem-estar através de uma abordagem
+                                humanizada e completa no tratamento de condições gerais de saúde.</p>
+                            <p class="doctor-description"><strong>Área de Atuação:</strong> Saúde da família e
+                                prevenção.</p>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="Gabriela.png" alt="Gabriela">
+                        </div>
+                    </li>
+
+                    <li class="carousel-slide">
+                        <div class="slide-text">
+                            <h3 class="doctor-name">Rita</h3>
+                            <p class="doctor-description"><strong>Nutricionista</strong> Elabora planos alimentares
+                                personalizados, focando na reeducação alimentar para promover a saúde, prevenir doenças
+                                e melhorar a qualidade de vida geral, sem dietas restritivas.</p>
+                            <p class="doctor-description"><strong>Área de Atuação:</strong> Reeducação alimentar e saúde
+                                metabólica.</p>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="Rita.png" alt="Rita">
+                        </div>
+                    </li>
+
+                    <li class="carousel-slide">
+                        <div class="slide-text">
+                            <h3 class="doctor-name">Karen</h3>
+                            <p class="doctor-description"><strong>Nutricionista Esportiva</strong> Especializada em
+                                otimizar o desempenho físico, recuperação muscular e composição corporal através da
+                                nutrição, atendendo atletas e praticantes de exercícios.</p>
+                            <p class="doctor-description"><strong>Área de Atuação:</strong> Performance, hipertrofia e
+                                emagrecimento saudável.</p>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="Karen.png" alt="Karen">
+                        </div>
+                    </li>
+
+                    <li class="carousel-slide">
+                        <div class="slide-text">
+                            <h3 class="doctor-name">Maury</h3>
+                            <p class="doctor-description"><strong>Terapia Integrativa Emocional</strong> Foca no
+                                equilíbrio da saúde emocional e mental, utilizando métodos holísticos para identificar e
+                                tratar as causas profundas dos desequilíbrios.</p>
+                            <p class="doctor-description"><strong>Área de Atuação:</strong> Equilíbrio emocional e
+                                técnicas de relaxamento.</p>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="Maury.png" alt="Maury">
+                        </div>
+                    </li>
+
+                    <li class="carousel-slide">
+                        <div class="slide-text">
+                            <h3 class="doctor-name">Irineu</h3>
+                            <p class="doctor-description"><strong>Terapia Integrativa Avançada</strong> Utiliza técnicas
+                                modernas e abrangentes para harmonização energética e mental, buscando a cura em níveis
+                                mais profundos e auxiliando na resolução de traumas.</p>
+                            <p class="doctor-description"><strong>Área de Atuação:</strong> Harmonização energética e
+                                resolução de bloqueios.</p>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="Irineu.png" alt="Irineu">
+                        </div>
+                    </li>
+
+                    <li class="carousel-slide">
+                        <div class="slide-text">
+                            <h3 class="doctor-name">Sanders</h3>
+                            <p class="doctor-description"><strong>Psicólogo</strong> Oferece suporte terapêutico para
+                                lidar com questões emocionais, comportamentais e relacionais, ajudando o paciente a
+                                desenvolver autoconhecimento.</p>
+                            <p class="doctor-description"><strong>Área de Atuação:</strong> Terapia
+                                cognitivo-comportamental e orientação psicológica.</p>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="Sanders.png" alt="Sanders">
+                        </div>
+                    </li>
+
+                    <li class="carousel-slide">
+                        <div class="slide-text">
+                            <h3 class="doctor-name">Victoria</h3>
+                            <p class="doctor-description"><strong>Psicóloga</strong> Especialista em saúde mental e
+                                desenvolvimento pessoal. Apoia pacientes na gestão da ansiedade, estresse e melhoria da
+                                autoestima através de acompanhamento empático.</p>
+                            <p class="doctor-description"><strong>Área de Atuação:</strong> Terapia de casais e gestão
+                                da ansiedade.</p>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="Victoria.png" alt="Victoria">
+                        </div>
+                    </li>
+
+                    <li class="carousel-slide">
+                        <div class="slide-text">
+                            <h3 class="doctor-name">Carla</h3>
+                            <p class="doctor-description"><strong>Gastroenterologia</strong> Especialista em
+                                diagnosticar e tratar doenças relacionadas ao aparelho digestivo (esôfago, estômago,
+                                intestino, pâncreas e fígado), promovendo a saúde digestiva.</p>
+                            <p class="doctor-description"><strong>Área de Atuação:</strong> Endoscopia e tratamento de
+                                doenças inflamatórias intestinais.</p>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="Carla.png" alt="Carla">
+                        </div>
+                    </li>
+
+                    <li class="carousel-slide">
+                        <div class="slide-text">
+                            <h3 class="doctor-name">Viviane</h3>
+                            <p class="doctor-description"><strong>Constelação Familiar</strong> Método terapêutico que
+                                trabalha dinâmicas familiares e relacionais ocultas, buscando soluções para conflitos
+                                através da representação do sistema familiar.</p>
+                            <p class="doctor-description"><strong>Área de Atuação:</strong> Resolução de conflitos
+                                sistêmicos e terapia breve.</p>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="Viviane.png" alt="Viviane">
+                        </div>
+                    </li>
+
+                    <li class="carousel-slide">
+                        <div class="slide-text">
+                            <h3 class="doctor-name">Rafael</h3>
+                            <p class="doctor-description"><strong>Clínico Geral</strong> Foca na saúde integral do
+                                paciente, atuando no diagnóstico de doenças, check-ups de rotina e coordenação do
+                                cuidado, encaminhando para especialistas quando necessário.</p>
+                            <p class="doctor-description"><strong>Área de Atuação:</strong> Saúde primária, prevenção e
+                                gerenciamento de condições crônicas.</p>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="Rafael.png" alt="Rafael">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="carousel-controls">
+                <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i> Anterior</button>
+                <button class="carousel-btn next-btn">Próximo <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <div class="mobile-list-container mobile-only">
+            <div id="aryel-doctors-list" class="mobile-doctors-wrapper"></div>
+        </div>
+
+        <div id="aryel-custom-modal" class="aryel-modal-overlay">
+            <div class="aryel-modal-content">
+                <span class="aryel-modal-close" onclick="fecharModalMedico()">&times;</span>
+                <div id="aryel-modal-render"></div>
+            </div>
+        </div><br>
+    </section>
+    <footer>
+        <div class="container">
+            <p>© 2024 Uniplan Med. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+
+    <div class="chat-widget">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h3>Dúvidas sobre o Convênio?</h3>
+                <button id="closeChat"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="whatsappForm" class="chat-body">
+                <input type="text" id="chatName" placeholder="Seu Nome" required>
+                <textarea id="chatMessage" rows="5" placeholder="Sua dúvida ou especialidade..." required></textarea>
+                <button type="submit" class="btn-chat-send">Enviar WhatsApp <i class="fab fa-whatsapp"></i></button>
+            </form>
+        </div>
+        <button class="chat-toggle-btn" id="chatToggle">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
