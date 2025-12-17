@@ -1,0 +1,711 @@
+/* =========================================
+   VARIÁVEIS E RESET
+   ========================================= */
+:root {
+    --primary: #2c9bc0;
+    /* Azul Claro */
+    --secondary: #8e2478;
+    /* Roxo */
+    --accent: #1d4065;
+    /* Azul Escuro */
+    --white: #ffffff;
+    --gray: #f4f4f4;
+    --text: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text);
+    line-height: 1.6;
+    padding-top: 80px;
+    /* Garante que o Header Fixo não cubra o conteúdo */
+}
+
+/* =========================================
+   UTILITÁRIOS E BOTÕES
+   ========================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.bg-light {
+    background-color: var(--gray);
+}
+
+.bg-blue {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-white {
+    background: var(--white);
+    color: var(--primary);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-white:hover {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   HEADER & NAV BAR (CORRIGIDO)
+   ========================================= */
+header {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 4000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo img {
+    height: 60px;
+    /* Reduzi levemente para dar respiro */
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    /* Espaço maior entre links */
+    align-items: center;
+    margin: 0;
+}
+
+.nav-links li {
+    white-space: nowrap;
+    /* Impede quebra de linha no texto */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+    transition: color 0.3s;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Menu Hambúrguer (Escondido no Desktop) */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--accent);
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero {
+    height: 100vh;
+    background: url('img3.png') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    margin-top: -80px;
+    /* Compensa o padding do body apenas aqui */
+    padding-top: 80px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background: rgba(44, 155, 192, 0.85);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 100;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-btns {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* =========================================
+   SEÇÕES GERAIS E CARDS
+   ========================================= */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--accent);
+    font-size: 2.5rem;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    border-bottom: 4px solid var(--primary);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card i {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   GALERIA E FOOTER
+   ========================================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+}
+
+footer {
+    background: var(--accent);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* =========================================
+   CARROSSEL (PC)
+   ========================================= */
+.carousel-container {
+    position: relative;
+    max-width: 1000px;
+    height: 480px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.carousel-track-container {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    background: var(--white);
+}
+
+/* Estilos de Botão do Carrossel */
+.carousel-controls {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 20;
+}
+
+.carousel-btn {
+    position: relative;
+    width: 150px;
+    height: 45px;
+    border-radius: 25px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(142, 36, 120, 0.9);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 20;
+}
+
+.carousel-btn:hover {
+    background: var(--secondary);
+}
+
+.carousel-btn i {
+    margin: 0 5px;
+}
+
+/* =========================================
+   CHAT WIDGET
+   ========================================= */
+.chat-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+}
+
+.chat-toggle-btn {
+    background: #25D366;
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.chat-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+.chat-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 320px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.9);
+    transition: all 0.3s;
+    transform-origin: bottom right;
+}
+
+.chat-window.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.chat-header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.chat-body input,
+.chat-body textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.btn-chat-send {
+    background: #25D366;
+    color: var(--white);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* =========================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================= */
+
+/* --- PC (DESKTOP) --- */
+@media (min-width: 769px) {
+
+    .mobile-only,
+    .mobile-list-container,
+    .aryel-modal-overlay {
+        display: none !important;
+    }
+
+    .desktop-only {
+        display: block !important;
+    }
+
+    /* Ajuste Carrossel PC */
+    .carousel-slide {
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        padding: 40px;
+    }
+
+    .slide-text {
+        flex: 1;
+        text-align: left;
+        max-width: 50%;
+    }
+
+    .slide-visual {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .slide-visual img {
+        width: 100%;
+        max-width: 450px;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+
+    .doctor-name {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+}
+
+/* --- MOBILE (CELULAR) --- */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+
+    .mobile-only,
+    .mobile-list-container {
+        display: block !important;
+    }
+
+    /* MENU MOBILE (HAMBURGUER) */
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        /* Logo abaixo do header */
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid #eee;
+
+        /* Esconde por padrão */
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    /* Classe ativa para mostrar o menu (via JS) */
+    .nav-links.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    /* Ajustes Gerais Mobile */
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+    }
+
+    /* Lista de Médicos Mobile */
+    .mobile-doctor-card-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border: 1px solid #f0f0f0;
+        border-radius: 15px;
+        padding: 12px;
+        margin-bottom: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        cursor: pointer;
+    }
+
+    .mobile-doctor-card-btn img {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    .mobile-doctor-card-btn .btn-text {
+        flex-grow: 1;
+        padding-left: 15px;
+        text-align: left;
+    }
+
+    .mobile-doctor-card-btn .btn-text span {
+        display: block;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #222;
+    }
+
+    /* Modal Mobile */
+    .aryel-modal-overlay {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(4px);
+    }
+
+    .aryel-modal-content {
+        background: #fff;
+        width: 90%;
+        max-width: 400px;
+        margin: 10vh auto;
+        border-radius: 25px;
+        position: relative;
+        overflow: hidden;
+        animation: aryelSlideUp 0.4s ease;
+    }
+
+    @keyframes aryelSlideUp {
+        from {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .aryel-modal-close {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 30px;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.4);
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+    }
+
+    .modal-img-top {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+    }
+
+    .modal-info-padding {
+        padding: 25px;
+    }
+}
+
+/* Modal de Agendamento (Overlay) */
+.uniplan-modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 20px 0;
+}
+
+.uniplan-modal-content {
+    background-color: var(--white);
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 95%;
+    max-width: 450px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+    animation: animatetop-uniplan 0.4s;
+}
+
+@keyframes animatetop-uniplan {
+    from {
+        top: -500px;
+        opacity: 0;
+    }
+
+    to {
+        top: 50px;
+        opacity: 1;
+    }
+}
+
+/* Inputs e botões do Modal */
+.modal-header-custom {
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.modal-body input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.modal-body .btn-primary {
+    width: 100%;
+    justify-content: center;
+}
+
+.uniplan-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    color: #999;
+}
